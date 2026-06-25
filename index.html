@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swaram - Nilambur Council Meeting Assistant</title>
+    <link rel="stylesheet" href="css/style.css">	
+</head>
+<body>
+
+<div class="container">
+    <h1>Swaram (സ്വരം)</h1>
+    <div class="subtitle">Nilambur Municipality Auto-Transcriber</div>
+
+    <div id="setupSection" class="section-box">
+        <label><b>🔑 ഗൂഗിൾ API Key നൽകുക:</b></label>
+        <input type="password" id="apiKeyInput" placeholder="AQ. അല്ലെങ്കിൽ AIza എന്ന് തുടങ്ങുന്ന Key നൽകുക">
+        <button id="saveKeyBtn" class="btn-green">💾 Save & Continue</button>
+        <div class="small-text">കുറിപ്പ്: ഇത് ഗിറ്റ്ഹബ്ബിൽ പബ്ലിഷ് ചെയ്യുമ്പോൾ ആർക്കും കാണാൻ കഴിയില്ല. ഈ Key ഫോണിന്റെ ബ്രൗസറിൽ മാത്രം സുരക്ഷിതമായി ഒളിപ്പിച്ചു വെക്കും. ഇനി ആപ്പ് തുറക്കുമ്പോൾ ഈ സ്ക്രീൻ കാണില്ല.</div>
+    </div>
+
+    <div id="mainSection" style="display: none;">
+        <div class="section-box" style="background: #e8f5e9;">
+            <label><b>🎙️ മീറ്റിംഗ് ഓഡിയോ / വീഡിയോ നൽകുക:</b></label>
+            <input type="file" id="audioFile" accept="audio/*, video/*">
+            <button id="uploadBtn" class="btn-green">📤 Convert & Transcribe</button>
+            <button id="resetKeyBtn" class="btn-outline">⚙️ Change API Key</button>
+        </div>
+
+        <div class="status" id="statusLabel">ഫയൽ പ്രോസസ്സ് ചെയ്യാൻ തയ്യാറാണ്...</div>
+
+        <div id="progressContainer" style="display: none; width: 100%; background-color: #e0e0e0; border-radius: 8px; margin-bottom: 15px; overflow: hidden;">
+            <div id="progressFill" style="width: 0%; height: 20px; background-color: #2e7d32; text-align: center; line-height: 20px; color: white; font-size: 13px; font-weight: bold; transition: width 0.2s;">0%</div>
+        </div>
+
+        <textarea id="outputText" placeholder="നിലമ്പൂർ മുനിസിപ്പാലിറ്റി മീറ്റിംഗ് റിപ്പോർട്ടും തീരുമാനങ്ങളും ഇവിടെ അക്ഷരങ്ങളായി വരും..."></textarea>
+        <button id="copyBtn" class="btn-blue">📋 Copy Full Report</button>
+    </div>
+</div>
+	<script src="js/app.js"></script>
+
+
+</body>
+</html>
